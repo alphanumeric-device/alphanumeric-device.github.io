@@ -6,7 +6,7 @@ window.onload = ()=>{
         var li = document.createElement('li')
         var a = document.createElement('a')
         a.href = link
-        a.textcontent = link.replace('./page_files/', '')
+        a.textContent = link.replace('./page_files/', '')
         li.appendChild(a)
         nav.appendChild(li)
     })
