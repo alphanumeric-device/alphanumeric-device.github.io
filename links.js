@@ -1,5 +1,5 @@
 var nav = document.getElementById('nav')
-var links = ['./page_files/index.html']
+var links = ['./index.html', './page_files/index.html']
 
 window.onload = ()=>{
     
