@@ -17,8 +17,8 @@ window.onload = ()=>{
             console.log('Skipping file')
             var li = document.createElement('li')
             var span = document.createElement('span')
-            span.href = link
-            span.disabled
+            // span.href = link
+            // span.disabled
             span.style.color = 'red'
 
             var s = link.replace('/', '')
