@@ -10,8 +10,9 @@ window.onload = ()=>{
         for(var i = 0; i < 2; i++){
             mod_href = mod_href.replace('/', '')
         }
-        mod_href = mod_href.split('/', 2)[1]
-        
+        console.log(mod_href)
+        mod_href = mod_href.slice(mod_href.indexOf('/'))
+        console.log(mod_href)
         if(mod_href==link.replace('/', '')){//needs to ignore linking the page if it is the page itself
             console.log('Skipping file')
         } else {
