@@ -22,13 +22,13 @@ window.onload = ()=>{
             // span.disabled
             span.style.color = 'red'
             var s = link
-            
+            var count = 0
             for(var i = 0; i < link.length; i++){
                 if(link[i] == '/'){
-                    
-                    span.style.left = `${10*i}`
+                    count++
                 }
             }
+            span.style.left = `${30*count}`
             s = link.replace('/', '') 
             span.textContent = s
             //use at to change the path to a relative path from the file so that it works on local and on github
@@ -40,12 +40,15 @@ window.onload = ()=>{
             var a = document.createElement('a')
             a.href = link
             a.style.position='relative'
+            var count = 0
             for(var i = 0; i < link.length; i++){
                 if(link[i] == '/'){
+                    count++
                     
-                    a.style.left = `${10*i}`
                 }
             }
+            a.style.left = `${30*count}`
+            
             var s = link.replace('/', '')
             //use at to change the path to a relative path from the file so that it works on local and on github
             a.textContent = s //s.replace('page_files/', '')
