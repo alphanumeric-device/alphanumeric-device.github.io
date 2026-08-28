@@ -28,7 +28,7 @@ window.onload = ()=>{
                     count++
                 }
             }
-            span.style.left = `${30*count}`
+            span.style.left = `${30*count}px`
             s = link.replace('/', '') 
             span.textContent = s
             //use at to change the path to a relative path from the file so that it works on local and on github
@@ -47,8 +47,8 @@ window.onload = ()=>{
                     
                 }
             }
-            a.style.left = `${30*count}`
-            
+            a.style.left = `${30*count}px`
+
             var s = link.replace('/', '')
             //use at to change the path to a relative path from the file so that it works on local and on github
             a.textContent = s //s.replace('page_files/', '')
