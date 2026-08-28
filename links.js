@@ -17,6 +17,7 @@ window.onload = ()=>{
             console.log('Skipping file')
             var li = document.createElement('li')
             var span = document.createElement('span')
+            span.style.position = 'relative'
             // span.href = link
             // span.disabled
             span.style.color = 'red'
@@ -38,6 +39,12 @@ window.onload = ()=>{
             var li = document.createElement('li')
             var a = document.createElement('a')
             a.href = link
+            for(var i = 0; i < link.length; i++){
+                if(link[i] == '/'){
+                    
+                    a.style.left = `${10*i}`
+                }
+            }
             var s = link.replace('/', '')
             //use at to change the path to a relative path from the file so that it works on local and on github
             a.textContent = s //s.replace('page_files/', '')
