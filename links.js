@@ -1,5 +1,5 @@
 var nav = document.getElementById('nav')
-var links = ['/index.html', '/page_files/index.html', '/page_files/gaussian_jordan_elimination.html']
+var links = ['/index.html', '/page_files/index.html', '/page_files/gaussian_jordan_elimination.html', '/page_files/unit1/ex/unit1_exercise.html', "/page_files/unit1/project/unit1_project.html", '/page_files/unit2/project/index.html', '/page_files/unit2/project/page1.html', '/page_files/unit2/project/page2.html', '/page_files/unit2/project/page3.html', '/page_files/unit2/project/combined_code.txt']
 
 
 window.onload = ()=>{

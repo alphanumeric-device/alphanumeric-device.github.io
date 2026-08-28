@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home...</title>
+    </head>
+    <body>
+        <h1>This is the home page</h1>
+        <a href = './page1.html'>Page 1</a><br>
+        <a href = './page2.html'>Page 2</a><br>
+        <a href = './page3.html'>Page 3</a>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page 1</title>
+    </head>
+    <body>
+        <h1>This is page 1</h1>
+        <a href = './index.html'>Home</a>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page 2.</title>
+    </head>
+    <body>
+        <h1>This is page 2</h1>
+        <a href = './index.html'>Home</a>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html><head>
+        <title>Page 3</title>
+    </head>
+    <body>
+        <h1>This is page 3</h1>
+        <a href = './index.html'>Home</a>
+    </body>
+</html>
