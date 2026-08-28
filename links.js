@@ -39,6 +39,7 @@ window.onload = ()=>{
             var li = document.createElement('li')
             var a = document.createElement('a')
             a.href = link
+            a.style.position='relative'
             for(var i = 0; i < link.length; i++){
                 if(link[i] == '/'){
                     
