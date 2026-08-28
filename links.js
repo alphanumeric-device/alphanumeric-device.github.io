@@ -1,5 +1,25 @@
+import fs from 'fs';
+import path from 'path';
+
+export function* readAllFiles(dir) {
+    const files = fs.readdirSync(dir, { withFileTypes: true });
+    for (const file of files) {
+        if (file.isDirectory()) {
+            yield* readAllFiles(path.join(dir, file.name));
+        } else {
+            yield path.join(dir, file.name);
+        }
+    }
+}
+
+// Usage
+for (const file of readAllFiles('/path/to/directory')) {
+    console.log(file);
+}
+
 var nav = document.getElementById('nav')
 var links = ['/index.html', '/page_files/index.html', '/page_files/gaussian_jordan_elimination.html']
+
 
 window.onload = ()=>{
     
