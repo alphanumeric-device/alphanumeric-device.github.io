@@ -20,8 +20,7 @@ window.onload = ()=>{
             // span.href = link
             // span.disabled
             span.style.color = 'red'
-            var s = link.replace('/', '') 
-            span.textContent = s
+            var s = link
             var count = 0
             for(var i = 0; i < link.length; i++){
                 if(link[i] == '/'){
@@ -29,7 +28,8 @@ window.onload = ()=>{
                     span.textContent += "    "
                 }
             }
-            
+            s = link.replace('/', '') 
+            span.textContent += s
             //use at to change the path to a relative path from the file so that it works on local and on github
            //s.replace('page_files/', '')
             li.appendChild(span)
