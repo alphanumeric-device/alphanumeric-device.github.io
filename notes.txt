@@ -1,5 +1,11 @@
+var nav = document.getElementById('nav')
+var links = ['/index.html', '/page_files/index.html', '/page_files/gaussian_jordan_elimination.html', '/page_files/unit1/ex/unit1_exercise.html', "/page_files/unit1/project/unit1_project.html", '/page_files/unit2/project/index.html', '/page_files/unit2/project/page1.html', '/page_files/unit2/project/page2.html', '/page_files/unit2/project/page3.html', '/page_files/unit2/project/combined_code.txt']
+var directory = {}
+
+
 var dir = {}
 var dir_key = {}
+var elementDir = {}
 links.forEach((link, i)=>{
         var t = link.replace('/', '').split('/')
         dir[`a${i}`] = t
@@ -9,85 +15,137 @@ Object.entries(dir).forEach(path=>{//entire path
     path[1].forEach((path2, i)=>{//specific file
         if(path2 == path[1][path[1].length-1]){//ignore the last index
             return
-        } else {
-            dir_key[path2] = [i, 0]
+        } else {//compare in going down levels in the pathname
+            for(var ii = 0; ii < path[1].length - 1; ii ++){
+                Object.entries(dir_key).forEach(item=>{
+                        if(path[1][ii] == item[1][0][ii]){
+                            console.log(path[1][i])
+                        } else {
+                            dir_key[path[1]] = [path[1], [i, 0]]
+                        }
+                })
+                
+            }
+            if(Object.entries(dir_key).length <= 0){
+                dir_key[path[1]] = [path[1], [i, 0]]
+            }
+            // if(dir_key[path[1]] != path[1]){
+            //     dir_key[path[1]] = [path[1], [i, 0]]
+            // }
         }
     })
    
 })
-
+//
 window.onload = ()=>{
     Object.entries(dir_key).forEach(obj=>{
-        var key = obj[0]
-        var value = obj[1][0]
+        var key = obj[0] //gets the first entry (the key), and chooses the second item (the proper diplsay name). if 0, then path
+        var value = obj[1]
         var li = document.createElement('li')
          var span = document.createElement('span')
             span.style.position = 'relative'
             span.style.color = 'red'
-            var count = 0
-            span.style.left = `${30*value}px`
-            obj[1][1] = 30*value
-            span.textContent = key
+            span.style.left = `${30*value[1][0]}px`
+            obj[1][1] = 30*value[1][0]
+            span.textContent = value[0][1]
             li.appendChild(span)
+            elementDir[key] = li
             nav.appendChild(li)
     })
     links.forEach((link, i)=>{
-        0
-    //     var href = window.location.href
-    //     // var mod_href = link.includes('/')?link.replace('../', ''):link.replace('./', '')
-    //     var mod_href = href
-    //     for(var i = 0; i < 2; i++){
-    //         mod_href = mod_href.replace('/', '')
-    //     }
+    /*
+        var href = window.location.href
+        // var mod_href = link.includes('/')?link.replace('../', ''):link.replace('./', '')
+        var mod_href = href
+        for(var i = 0; i < 2; i++){
+            mod_href = mod_href.replace('/', '')
+        }
         
-    //     mod_href = mod_href.slice(mod_href.indexOf('/'))
+        mod_href = mod_href.slice(mod_href.indexOf('/'))
         
-    //     if(mod_href==link){//needs to ignore linking the page if it is the page itself
-    //         console.log('Skipping file')
-    //         var li = document.createElement('li')
-    //         var span = document.createElement('span')
-    //         span.style.position = 'relative'
-    //         // span.href = link
-    //         // span.disabled
-    //         span.style.color = 'red'
-    //         var s = ""
+        if(mod_href==link){//needs to ignore linking the page if it is the page itself
+            console.log('Skipping file')
+            var li = document.createElement('li')
+            var span = document.createElement('span')
+            span.style.position = 'relative'
+            // span.href = link
+            // span.disabled
+            span.style.color = 'red'
+            var s = ""
             
-    //         var count = 0
-    //         for(var i = 0; i < link.length; i++){
-    //             if(link[i] == '/'){
-    //                 count++
-    //             }
-    //         }
-    //         // var linkPath = link.replace('/', '').split('/')
-    //         span.style.left = `${30*count}px`
+            var count = 0
+            for(var i = 0; i < link.length; i++){
+                if(link[i] == '/'){
+                    count++
+                }
+            }
+            // var linkPath = link.replace('/', '').split('/')
+            span.style.left = `${30*count}px`
             
             
 
-    //         s = link.replace('/', '') 
-    //         span.textContent = s
-    //         //use at to change the path to a relative path from the file so that it works on local and on github
-    //        //s.replace('page_files/', '')
-    //         li.appendChild(span)
-    //         nav.appendChild(li)
-    //     } else {
-    //         var li = document.createElement('li')
-    //         var a = document.createElement('a')
-    //         a.href = link
-    //         a.style.position='relative'
-    //         var count = 0
-    //         for(var i = 0; i < link.length; i++){
-    //             if(link[i] == '/'){
-    //                 count++
+            s = link.replace('/', '') 
+            span.textContent = s
+            //use at to change the path to a relative path from the file so that it works on local and on github
+           //s.replace('page_files/', '')
+            li.appendChild(span)
+            nav.appendChild(li)
+        } else {
+            var li = document.createElement('li')
+            var a = document.createElement('a')
+            a.href = link
+            a.style.position='relative'
+            var count = 0
+            for(var i = 0; i < link.length; i++){
+                if(link[i] == '/'){
+                    count++
                     
-    //             }
-    //         }
-    //         a.style.left = `${30*count}px`
+                }
+            }
+            a.style.left = `${30*count}px`
 
-    //         var s = link.replace('/', '')
-    //         //use at to change the path to a relative path from the file so that it works on local and on github
-    //         a.textContent = s //s.replace('page_files/', '')
-    //         li.appendChild(a)
-    //         nav.appendChild(li)
-    //     }
+            var s = link.replace('/', '')
+            //use at to change the path to a relative path from the file so that it works on local and on github
+            a.textContent = s //s.replace('page_files/', '')
+            li.appendChild(a)
+            nav.appendChild(li)
+        }
+        */
+    var li = document.createElement('li')
+            var a = document.createElement('a')
+            a.href = link
+            a.style.position='relative'
+            Object.entries(dir).forEach(path=>{//entire path
+                path[1].forEach((path2, i)=>{//specific file
+                    if(path2 == path[1][path[1].length-1]){//ignore the last index
+                        a.style.left = `${30}px`
+                    }
+                })
+            })
+            var s = link.replace('/', '')
+            //use at to change the path to a relative path from the file so that it works on local and on github
+            a.textContent = s //s.replace('page_files/', '')
+            li.appendChild(a)
+            Object.entries(elementDir).forEach(element=>{
+                //['path name'] = [li element]
+                var t = link.replace('/', '').split('/')
+                for(var i = t.length - 1; i >= 0; i--){
+                    if(t[t.length - i] == element[0]){
+                        console.log('mm')
+                        element[1].appendChild(li)
+                    }
+                }
+                
+            })
     })
 }
+
+
+
+
+   
+
+     
+            
+        
+  
