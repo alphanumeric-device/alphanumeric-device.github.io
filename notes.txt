@@ -1,0 +1,93 @@
+var dir = {}
+var dir_key = {}
+links.forEach((link, i)=>{
+        var t = link.replace('/', '').split('/')
+        dir[`a${i}`] = t
+        // showMsg()
+    })
+Object.entries(dir).forEach(path=>{//entire path
+    path[1].forEach((path2, i)=>{//specific file
+        if(path2 == path[1][path[1].length-1]){//ignore the last index
+            return
+        } else {
+            dir_key[path2] = [i, 0]
+        }
+    })
+   
+})
+
+window.onload = ()=>{
+    Object.entries(dir_key).forEach(obj=>{
+        var key = obj[0]
+        var value = obj[1][0]
+        var li = document.createElement('li')
+         var span = document.createElement('span')
+            span.style.position = 'relative'
+            span.style.color = 'red'
+            var count = 0
+            span.style.left = `${30*value}px`
+            obj[1][1] = 30*value
+            span.textContent = key
+            li.appendChild(span)
+            nav.appendChild(li)
+    })
+    links.forEach((link, i)=>{
+        0
+    //     var href = window.location.href
+    //     // var mod_href = link.includes('/')?link.replace('../', ''):link.replace('./', '')
+    //     var mod_href = href
+    //     for(var i = 0; i < 2; i++){
+    //         mod_href = mod_href.replace('/', '')
+    //     }
+        
+    //     mod_href = mod_href.slice(mod_href.indexOf('/'))
+        
+    //     if(mod_href==link){//needs to ignore linking the page if it is the page itself
+    //         console.log('Skipping file')
+    //         var li = document.createElement('li')
+    //         var span = document.createElement('span')
+    //         span.style.position = 'relative'
+    //         // span.href = link
+    //         // span.disabled
+    //         span.style.color = 'red'
+    //         var s = ""
+            
+    //         var count = 0
+    //         for(var i = 0; i < link.length; i++){
+    //             if(link[i] == '/'){
+    //                 count++
+    //             }
+    //         }
+    //         // var linkPath = link.replace('/', '').split('/')
+    //         span.style.left = `${30*count}px`
+            
+            
+
+    //         s = link.replace('/', '') 
+    //         span.textContent = s
+    //         //use at to change the path to a relative path from the file so that it works on local and on github
+    //        //s.replace('page_files/', '')
+    //         li.appendChild(span)
+    //         nav.appendChild(li)
+    //     } else {
+    //         var li = document.createElement('li')
+    //         var a = document.createElement('a')
+    //         a.href = link
+    //         a.style.position='relative'
+    //         var count = 0
+    //         for(var i = 0; i < link.length; i++){
+    //             if(link[i] == '/'){
+    //                 count++
+                    
+    //             }
+    //         }
+    //         a.style.left = `${30*count}px`
+
+    //         var s = link.replace('/', '')
+    //         //use at to change the path to a relative path from the file so that it works on local and on github
+    //         a.textContent = s //s.replace('page_files/', '')
+    //         li.appendChild(a)
+    //         nav.appendChild(li)
+    //     }
+    })
+}
