@@ -8,6 +8,47 @@ function showMsg(message, time) {
         document.body.appendChild(container);
     }
 
+    const container = document.getElementById('notificationContainer');
+    
+    // Create the notification element
+    const notification = document.createElement('div');
+    notification.classList.add('notification');
+    
+    // Add close button and message content
+    notification.innerHTML = `
+        <span class="notification-close" onclick="this.parentElement.style.display='none';">&times;</span>
+        <p>${message}</p>
+    `;
+
+    // Add to container and show it
+    container.appendChild(notification);
+    
+    // Use a small timeout to allow CSS transition to work
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 10);
+
+    // Automatically hide after 3 seconds
+    setTimeout(() => {
+        notification.classList.remove('show');
+        // Remove from DOM after transition finishes (0.5s)
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 500); 
+    }, time*1000);
+}
+function showMsg(message, time) {
+    // Ensure CSS is injected once
+    if (!document.getElementById('notificationContainer')) {
+        // injectNotificationCSS();
+        const container = document.createElement('div');
+        container.id = 'notificationContainer';
+        container.classList.add('notification-container');
+        document.body.appendChild(container);
+    }
+
 
     const container = document.getElementById('notificationContainer');
     
@@ -43,7 +84,7 @@ function showMsg(message, time) {
     }, time*1000);
 }
 var nav = document.getElementById('nav')
-var links = ['/index.html', '/page_files/index.html', '/page_files/gaussian_jordan_elimination.html', '/page_files/unit1/ex/unit1_exercise.html', "/page_files/unit1/project/unit1_project.html", '/page_files/unit2/project/index.html', '/page_files/unit2/project/page1.html', '/page_files/unit2/project/page2.html', '/page_files/unit2/project/page3.html', '/page_files/unit2/project/combined_code.txt']
+var links = ['/index.html', '/page_files/index.html', '/page_files/gaussian_jordan_elimination.html', '/page_files/unit1/ex/unit1_exercise.html', "/page_files/unit1/project/unit1_project.html", '/page_files/unit2/project/index.html', '/page_files/unit2/project/page1.html', '/page_files/unit2/project/page2.html', '/page_files/unit2/project/page3.html', '/page_files/unit2/project/combined_code.txt', '/page_files/codepen_challenge/index.html']
 var directory = {}
 
 
@@ -125,89 +166,55 @@ for(var i = 0 ; i < item_array.length-1; i++){
             max = array.length
         }
     })
-    
-for(var col = 0; col < max-1; col++){
-    for(var row = item_array.length-1; row > 0; row--){
-        if(item_array[row-1] && item_array[row][col] && item_array[row-1][col]){
-            // showMsg(item_array[row+1][col][1], 100)
+// var reach = 0
+// for(var col = 0; col < max-1; col++){
+//     for(var row = item_array.length-1; row > 0; row--){
+//         if(item_array[row-1] && item_array[row][col+reach] && item_array[row-1][col+reach]){
+//             // showMsg(item_array[row+1][col][1], 100)
             
-            if(item_array[row-1][col][1] == item_array[row][col][1]){
-                //shove the stuff under this into the stuff under the other one
-                var a = true
-                var count = 0
-                while(a == true){
-                    if(item_array[row-1][col+count+1][1] == item_array[row][col+count+1][1]){
-                        a = true
+//             if(item_array[row-1][col+reach][1] == item_array[row][col+reach][1]){
+//                 //shove the stuff under this into the stuff under the other one
+//                 var a = true
+//                 var count = 0
+//                 while(a == true){
+//                     if(item_array[row-1][col+count+1+reach][1] == item_array[row][col+count+1+reach][1]){
+//                         a = true
                        
-                    } else {
-                        a = false
-                        break
-                    }
-                    count++
-                    if(count > 1000){
-                        break
-                    }
-                }
-                var new_array = []//has the items to be added 
-                new_array = item_array[row].slice(col+count+1, item_array[row].length)
-                new_array.forEach((item,i)=>{
-                    for(var t = 0; t < item_array[row-1].length-1; t++){
-                        if(item[1]==item_array[row-1][t][1]){
-                            new_array.splice(i, 1)
-                        }
-                    }
+//                     } else {
+//                         a = false
+//                         break
+//                     }
+//                     count++
+//                     if(count > 1000){
+//                         break
+//                     }
+//                 }
+//                 var new_array = []//has the items to be added 
+//                 new_array = item_array[row].slice(col+count+1+reach, item_array[row].length)
+//                 new_array.forEach((item,i)=>{
+//                     for(var t = 0; t < item_array[row-1].length-1; t++){
+//                         if(item[1]==item_array[row-1][t][1]){
+//                             new_array.splice(i, 1)
+//                         }
+//                     }
                     
-                })
-                // showMsg(new_array, 100)
-                item_array[row-1].splice(col+1, 0, new_array)
-                item_array[row].splice(col, item_array[row].length - col)
-                if(item_array[row].length < 1){
-                    item_array.splice(row, 1)
-                }
-            } 
+//                 })
+//                 // showMsg(new_array, 100)
+//                 item_array[row-1].splice(col+1+reach, 0, new_array)
+//                 item_array[row].splice(col+reach, item_array[row].length - col - reach)
+//                 if(item_array[row].length < 1){
+//                     item_array.splice(row, 1)
+//                 }
+//             } 
             
-        }
+//         }
         
-    }
-}
-var item = null
-for(var col = 0; col < max-1; col++){
-    for(var row = item_array.length-1; row > 0; row--){
-        var lvl = 0
-        
-        var e = 0
-        var r = 0
-        while(true){
-            if(item){
-                if(item[0]){//if the possible array under array
-                    // item = item_array[row][col][0]
-                    if(typeof(item[0])=='object'){
-                        item = item[0]
-                        console.log(item)
-                    } else {
-                        r++
-                        item = item[r]
-                        console.log('broke')
-                        // break
-                    }
-                    
-                } else {
-                    break
-                }
-                
-            } else {
-                item = item_array[row][col]
-            }
-            e ++
-            if(e > 1000){
-                break
-            }
-        }
-        
-        
-        
-    }
-}
+//     }
+// }
+
+
+
+// }
 
 // for(var row = 0; row < item_array.length - 1; row++){
 //     for(var col = 0; col < item_array[row].length-1; col++){
@@ -255,10 +262,12 @@ for(var col = 0; col < max-1; col++){
 // [["page_files",30],["unit2",31],["project",32],["combined_code.txt",33]]]
 //     */
 // }
+var fullList
+Object.values(dir).forEach(item=>{
 
-
+})
 window.onload = ()=>{
-    Object.values(dir_key).forEach(obj=>{//[index, pathname, px]
+    Object.values(dir).forEach(obj=>{//[index, pathname, px]
        //gets the first entry (the key), and chooses the second item (the proper diplsay name). if 0, then path
        
         var li = document.createElement('li')
@@ -368,8 +377,5 @@ window.onload = ()=>{
     // second.textContent = `dir: ${JSON.stringify(dir, null, 2)}\n
     // item_array: ${JSON.stringify(item_array, null)}\n
     // `
-
-
-
 
 
