@@ -3,7 +3,7 @@ style.textContent = `notification-container {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 300px;
+            width: 10%;
             z-index: 1000;
             display: flex;
             flex-direction: column;
