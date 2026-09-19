@@ -1,3 +1,49 @@
+var style = document.createElement('style')
+style.textContent = `notification-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .notification {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            position: relative;
+        }
+
+        .notification.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .notification-close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            color: #aaa;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .notification-close:hover {
+            color: white;
+        }
+        #second{
+            white-space: pre-line;
+        }
+`
+document.head.appendChild(style)
 function showMsg(message, time) {
     // Ensure CSS is injected once
     if (!document.getElementById('notificationContainer')) {
