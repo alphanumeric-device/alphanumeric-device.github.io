@@ -413,6 +413,7 @@ window.onload = ()=>{
              official_dir[num[0]][1] = a
                 a.style.position = 'relative'
                 a.style.color = 'red'
+                a.style.textDecoration = 'none'
                 
                 //    span.style.left = `${official_dir[num[0]][3]*30}px` 
                 for(var i = 0; i < official_dir[num[0]][3]*5; i++){
