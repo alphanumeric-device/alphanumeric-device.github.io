@@ -3,7 +3,7 @@ style.textContent = `notification-container {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 10%;
+            width: 300px;
             z-index: 1000;
             display: flex;
             flex-direction: column;
@@ -44,6 +44,7 @@ style.textContent = `notification-container {
         }
 `
 document.head.appendChild(style)
+
 function showMsg(message, time) {
     // Ensure CSS is injected once
     if (!document.getElementById('notificationContainer')) {
@@ -89,7 +90,7 @@ function showMsg(message, time) {
     }, time*1000);
 }
 var nav = document.getElementById('nav')
-var links = ['/index.html', '/page_files/index.html', '/page_files/gaussian_jordan_elimination.html', '/page_files/unit1/ex/unit1_exercise.html', "/page_files/unit1/project/unit1_project.html", '/page_files/unit2/project/index.html', '/page_files/unit2/project/page1.html', '/page_files/unit2/project/page2.html', '/page_files/unit2/project/page3.html', '/page_files/unit2/project/combined_code.txt', '/page_files/codepen_challenge/index.html']
+var links = ['/index.html', '/page_files/index.html', '/page_files/gaussian_jordan_elimination.html', '/page_files/unit1/ex/unit1_exercise.html', "/page_files/unit1/project/unit1_project.html", '/page_files/unit2/project/index.html', '/page_files/unit2/project/page1.html', '/page_files/unit2/project/page2.html', '/page_files/unit2/project/page3.html', '/page_files/unit2/project/combined_code.txt', '/page_files/codepen_challenge/index.html', '/page_files/unit3/unit3_exercises/exercise1.html', '/page_files/unit3/unit3_exercises/exercise2.html', '/page_files/unit3/unit3_exercises/exercise3.html', '/page_files/unit3/unit3_exercises/unit3_exercises.zip', '/page_files/unit3/unit3_project/index.html', '/page_files/unit4/exercise/unit4_ex.zip', '/page_files/unit4/exercise/unit4_ex5.css', '/page_files/unit4/exercise/unit4_ex5.html', '/page_files/unit4/exercise/unit4_ex6.css', '/page_files/unit4/exercise/unit4_ex6.html', '/page_files/unit4/exercise/unit4_exercise1.css', '/page_files/unit4/exercise/unit4_exercise1.html', '/page_files/unit4/exercise/unit4_exercise2.css', '/page_files/unit4/exercise/unit4_exercise2.html', '/page_files/unit4/exercise/unit4_exercise3.css', '/page_files/unit4/exercise/unit4_exercise3.html', '/page_files/unit4/exercise/unit4_exercise4.css', '/page_files/unit4/exercise/unit4_exercise4.html', '/page_files/unit4/project/unit4_project.html']
 var directory = {}
 
 
@@ -414,7 +415,6 @@ window.onload = ()=>{
                 a.style.position = 'relative'
                 a.style.color = 'red'
                 a.style.textDecoration = 'none'
-                
                 //    span.style.left = `${official_dir[num[0]][3]*30}px` 
                 for(var i = 0; i < official_dir[num[0]][3]*5; i++){
                     a.textContent += '-'
@@ -539,4 +539,5 @@ window.onload = ()=>{
     // second.textContent = `dir: ${JSON.stringify(dir, null, 2)}\n
     // item_array: ${JSON.stringify(item_array, null)}\n
     // `
+
 
