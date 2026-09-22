@@ -1,0 +1,17 @@
+/* Background color: #FFF8DC
+
+Text color: #000099
+
+Font family: Arial, Helvetica, or sans-serif
+
+An ID called #new that is bold and italic */
+
+body{
+    background-color: #FFF8DC;
+    color: #000099;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#new{
+    font-weight: bold;
+    font-style: italic;
+}
