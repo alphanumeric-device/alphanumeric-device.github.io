@@ -1,0 +1,59 @@
+img_class{
+    height: 300px;
+}
+#borderimg{
+    background-color: rgb(70, 90, 70);
+    color: rgb(167, 167, 167);
+}
+body{
+    background-image: url('m.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#wrapper{
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+    opacity: 0.9;
+    border: 10px solid blue;
+    border-radius: 20px;
+}
+.specialborder{
+    border-image: url('rupee2.png');
+    border-image-slice: fill 10%;
+    border-image-width: 40px 20px;
+    border-image-outset: 1rem;
+    border-image-repeat: stretch;
+}
+
+
+
+/*grabbed from off google*/
+ul {
+    list-style: none;
+    /* Remove default bullets */
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    /* Centers the image vertically with the text */
+    margin-bottom: 10px;
+    /* Spacing between list items */
+    margin-top: 10px;
+    background-color: #344b44;
+}
+
+ul li::before {
+    content: "";
+    display: inline-block;
+    background-image: url('tim_curry.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 32px;
+    /* Set your image width */
+    height: 32px;
+    /* Set your image height */
+    margin-right: 10px;
+    /* Space between the image and the text */ }
