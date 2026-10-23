@@ -91,6 +91,7 @@ function showMsg(message, time) {
 }
 var nav = document.getElementById('nav')
 var links = ['/index.html', '/page_files/index.html', '/page_files/gaussian_jordan_elimination.html', '/page_files/unit1/ex/unit1_exercise.html', "/page_files/unit1/project/unit1_project.html", '/page_files/unit2/project/index.html', '/page_files/unit2/project/page1.html', '/page_files/unit2/project/page2.html', '/page_files/unit2/project/page3.html', '/page_files/unit2/project/combined_code.txt', '/page_files/codepen_challenge/index.html', '/page_files/unit3/unit3_exercises/exercise1.html', '/page_files/unit3/unit3_exercises/exercise2.html', '/page_files/unit3/unit3_exercises/exercise3.html', '/page_files/unit3/unit3_exercises/unit3_exercises.zip', '/page_files/unit3/unit3_project/index.html', '/page_files/unit4/exercise/unit4_ex.zip', '/page_files/unit4/exercise/unit4_ex5.css', '/page_files/unit4/exercise/unit4_ex5.html', '/page_files/unit4/exercise/unit4_ex6.css', '/page_files/unit4/exercise/unit4_ex6.html', '/page_files/unit4/exercise/unit4_exercise1.css', '/page_files/unit4/exercise/unit4_exercise1.html', '/page_files/unit4/exercise/unit4_exercise2.css', '/page_files/unit4/exercise/unit4_exercise2.html', '/page_files/unit4/exercise/unit4_exercise3.css', '/page_files/unit4/exercise/unit4_exercise3.html', '/page_files/unit4/exercise/unit4_exercise4.css', '/page_files/unit4/exercise/unit4_exercise4.html', '/page_files/unit4/project/unit4_project.html', '/page_files/unit5/ex/ex1/unit5_ex1.html', '/page_files/unit5/ex/ex2/unit5_ex2.html', '/page_files/unit5/ex/ex3/unit5_ex3.html', '/page_files/unit5/ex/ex3/unit5_ex3.css', '/page_files/unit5/ex/ex4/unit5_ex4.html', '/page_files/unit5/ex/ex5/unit5_ex5.html', '/page_files/unit5/ex/ex6/unit5_ex6.html', '/page_files/unit5/ex/ex6/unit5_ex6.css', '/page_files/unit5/ex/ex7/unit5_ex7.html', '/page_files/unit5/ex/ex8/unit5_ex8.html', '/page_files/unit5/ex/ex9/unit5_ex9.html', '/page_files/unit5/ex/ex10/unit5_ex10.html', '/page_files/unit5/project/unit5_project.html', '/page_files/unit5/project/unit5_project.css', '/page_files/unit6/index.html', '/page_files/unit6/style.css', '/other/graph/index.html', '/other/graph/main.js', '/page_files/unit7/ex/unit7_ex1.html', '/page_files/unit7/ex/unit7_ex2.html', '/page_files/unit7/ex/unit7_ex3.html', '/page_files/unit7/ex/unit7_ex4.html', '/page_files/unit7/ex/unit7_ex5.html', '/page_files/unit7/ex/unit7_ex6.html', '/page_files/unit7/project/index.html', '/page_files/unit7/project/style.css']
+links = links.sort()
 var directory = {}
 
 
@@ -129,7 +130,7 @@ for(var i = Object.values(dir).length - 1; i >= 0; i--){
     item_array.unshift(array)
 }
 
-
+// item_array = item_array.sort()
 for(var i = 0 ; i < item_array.length; i++){
     var ref = item_array[i]
     
