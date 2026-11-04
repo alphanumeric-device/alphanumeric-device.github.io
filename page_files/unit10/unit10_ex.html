@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--Write the HTML for a two-column table that contains the names of your favorite 3 world events and the date they
+occurred. The first row of the table should span two columns and contain the ­following heading: My Favorite World
+Events.
+
+My Favorite World Events
+Man gains "control" of Fire ~1,500,000 BC
+First Villages Formed ~10,000 BC
+Pokemon Released to the world 1995 AD
+Write the HTML for a three-column table to describe the courses you are taking this semester. The columns should contain
+the course number, course name, and instructor name. The first row of the table should use th tags and contain
+descriptive headings for the columns. Use the table row grouping tags <thead> and
+<tbody> in your table.
+
+    Course Number Course Name Instructor
+    ICE-101 Intro to Ice Cream Tasting Dr. Derry White
+    BAN-435 Advanced Banana Peeling II Dr. Ezekiel "The Monkey" Giggles
+    SLE-705 Somnambulation - Theory and Practice III Dr. Sandy Mann
+    Write the HTML for a table with five rows, two columns, and no border. The cell in the first column of each row will
+    contain the name of one of your favorite movies, books, or games, etc. The corresponding cell in the second column
+    of each row will contain a description of the movie, one sentence is fine. Configure alternating rows to use the
+    background color #CCCCCC.
+
+    zebra stripe table
+
+    Modify the tables you have created to be centered on the page.
+
+    Submit your repl.it link when finished. =)
+-->
+<html>
+    <head>
+        <style>
+            .s{
+                background-color: white;
+            }
+            .s tr:nth-child(odd){
+                background-color: rgb(134, 134, 171);
+            }
+        </style>
+    </head>
+    <body>
+        <table border = 1>
+            <thead>
+                <th colspan="2">
+                    
+                Events
+                    
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        WW2 start
+                    </td>
+                    <td>
+                        Sept 1, 1939
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        WW2 end
+                    </td>
+                    <td>
+                        Sept 2, 1945
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Dissolution of Soviet Union
+                    </td>
+                    <td>
+                        December 25, 1991
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1">
+            <thead>
+                <th>Course Name</th>
+                <th>Course Level</th>
+                <th>Course Instructor</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pre-Calc</td>
+                    <td>High School</td>
+                    <td>Dan Ryan</td>
+                </tr>
+                <tr>
+                    <td>Intro to Computer Programming</td>
+                    <td>College</td>
+                    <td>James Munger</td>
+                </tr>
+                <tr>
+                    <td>Horticulture</td>
+                    <td>High School</td>
+                    <td>Jennifer Wherley</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table class = 's'>
+            <thead>
+                <th>Game</th>
+                <th>Descr</th>
+                
+            </thead>
+            <tbody>
+                <tr>
+                    <td>TLoZ: BotW</td>
+                    <td>Open world, rpg like game focusing on exploration, combat, and story.</td>
+                   
+                </tr>
+                <tr>
+                    <td>OpenTTD</td>
+                    <td>A little transport tycoon management game.</td>
+                   
+                </tr>
+                <tr>
+                    <td>Pokemon: Violet</td>
+                    <td>A game focused on taking away the freedom of random creatures you find in the wild. Also focuses on beating creatures that other characters have caught mercilessly.</td>
+                    
+                </tr>
+                <tr>
+                    <td>Farming Simulator 2025</td>
+                    <td>A game focused on farming</td>
+                </tr>
+                <tr>
+                    <td>Minecraft</td>
+                    <td>A game focused on mining and crafting</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
