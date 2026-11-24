@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <!--Text box for name
+
+        E-mail address input form control for the e-mail address
+        
+        A scrolling text box that is 60 characters wide and 3 rows high
+        
+        A radio button group with at least three choices
+        
+        A check box group with at least three choices
+        
+        A select box that initially shows three items but contains at least four items
+        
+        A submit button
+        
+        A reset button
+        
+        Use the fieldset and legend elements as shown in the example to configure the ­display of form areas with radio buttons and checkboxes.-->
+        <form action = "" method = "get" style = 'background-color: aquamarine; margin: auto; align-items: center;'>
+            <input type="text" name = 'name' placeholder="Your name...">
+            <br>
+            <input type = 'email' placeholder="Email" name = 'email'>
+            <hr>
+            <!-- <input type = 'text' width="100" placeholder="Just some text" name = 'text'> -->
+             <textarea name = 'text' placeholder="Just some text..." cols="60" rows = '3'></textarea>
+            <fieldset>
+                <p>Choose one</p>
+                Option 1<input type = 'radio' name = 'rad' value = 'rad1'>
+                Option 2<input type = "radio" name = 'rad' value = 'rad2'>
+                Option 3<input type = 'radio' name = 'rad' value = 'rad3'>
+            </fieldset>
+            <hr>
+            <fieldset>
+                Option 1<input type='checkbox' name='che' value = 'ch1'>
+                Option 2<input type="checkbox" name='che' value = 'ch2'>
+                Option 3<input type='checkbox' name='che' value = 'ch3'>
+            </fieldset>
+            <br>
+            <select name = 'selection'>
+                <option>Opt 1</option>
+                <option>Opt 2</option>
+                <option>Opt 3</option>
+                <option hidden>Opt 4</option>
+            </select>
+            <br>
+            <input type = 'submit'>
+            <br>
+            <hr>
+            <br>
+            <input type = 'reset'>
+        </form>
+    </body>
+</html>
